@@ -1,0 +1,60 @@
+#Zadanie 1
+import math
+print("program do liczenia ax^2 + bx + c")
+a = float(input("podaj a "))
+b = float(input("podaj b "))
+c = float(input("podaj c "))
+delta = b**2 - 4*a*c
+if delta < 0.0:
+    print("nie ma miejsc zerowych")
+elif delta == 0:
+    print("miejsce zerowe to ", -b/2*a)
+elif delta > 0.0:
+    p_delty = math.sqrt(delta)
+    print("miejsca zerowe to ", (-b - p_delty) / 2 * a, " i ", (-b + p_delty) / 2 * a)
+else:
+    print("co")
+
+#Zad 2
+
+tab = []
+for i in range (0,200):
+    tab.append(i+1)
+    print("lista[",i,"]: ", tab[i])
+
+print("długość listy to ",len(tab))
+minimalna = min(tab)
+print("minimalny element listy to ",tab.index(minimalna))
+print("maksymalny element listy to ",tab.index(max(tab)))
+
+#Zad 3
+a=(input("podaj liczbę"))
+b=(input("podj drugą liczbę"))
+if (a==b):
+     print("liczby są równe")
+else:
+     print("Liczby są różne")
+
+#T: Pseudo Losowanie liczb
+#1. Poproś użytkownika, żeby podał liczbę, a następnie sprawdź czy liczba jest liczbą wylosowaną przez komputer
+#2. Użytkownik ma zgadywać liczbę dopóki nie zgadnie
+#3. Pokazuje czy użytkownik podał liczbę mniejszą od wylosowanej lub większą o wylosowanej
+#4. Pokazuje ile kroków użytkownik potrzebuje, aby zgadnąć liczbę
+import random
+a=0                                     #jeżeli chcemy, żeby uruuchomić pętle, żeby użytkownik mógł coś podać to
+                                        #przypisujemy jej 0
+lp=1                                    #licznik prób nie może zaczynać się od zera!
+losowanie = random.randint(1,100+1)
+
+while a!=losowanie:
+    a = int(input("Podaj swoja szczęsliwą liczbę od 1 do 100: "))
+    if a==losowanie:
+        print("Wygrałeś")
+    else:
+        print("Przegrałeś, spróbuj ponownie")
+        if a>losowanie:
+            print("Wylosowana liczba jest mniejsza")
+        else:
+            print("Wylosowana liczba jest wieksza")
+        lp = lp + 1                                         #po każdej próbie licznik prób się zwiększa
+print("Podjąłeś ",lp," prób")

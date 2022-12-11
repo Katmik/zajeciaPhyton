@@ -1,0 +1,182 @@
+a=int(input("Podaj pierwszą liczbę: "))
+b=int(input("Podaj drugą liczbę: "))
+
+#Funkcja warunkowa
+if (b==0):                                          #Funkcja jeżeli porównujemy liczbę b z zerem (==)
+    print("Nie dziel przez zero!")                  #Wypisujemy instukcję jeśli jest prawda
+elif(a==0):                                         #W drugim warunku porównujemy a z 0 (==)
+    print("a też jest zerem!")                      #Wypisujemy isntrukcję jeśli elif będzie prawdą
+else:                                               #a w przeciwnym wypadku (jeżeli powyższe warunki nie zost. wyk.
+    dzielenie=a/b                                   #wykonujemy instrukcję
+    print(dzielenie)
+print("To jest koniec programu")
+
+#Zadanie, gdize sprawdzamy czy liczba jest parzysta
+a=int(input("Podaj liczbę całkowitą: "))
+
+if(a%2==0):
+    print("Liczba jest podzielna przez 2!")
+else:
+    print("Liczba nie jest podzielna przez 2!")
+
+
+#Zadanie dotyczące prędkości
+
+a=int(input("Podaj  liczbe w km"))
+if(a<=10):
+    print("kwota mandatu 100")
+elif(a<=30):
+    print("kwota mandatu 200")
+else:
+    print("kwota 400")
+
+#Program, który zapyta użytkownika o wiek, jeśli użytkownik jest przed 18 -> "użytkownik niepełnoletni" i pokaż
+#ile lat zostało do 18tki, jeśli po 18 to wyświetli "użytkownik pełnoletni", a jeśli jest po 100 to wyświetli "200 lat"
+
+wiekDelikwenta = int(input("Ile masz lat?: "))
+if (wiekDelikwenta<=18):
+    print("drogi delikwencie, zostalo Ci ", 18 - wiekDelikwenta, "do 18stki")
+elif (wiekDelikwenta<=100):
+    print("delikwent pelnoletni")
+else:
+    print("zyczymy 200 lat")
+
+#Porównaj dwie liczby i wypisz, która jest większa. Pamiętaj, że mogą być równe!
+a=int(input("Podaj liczbę a: "))
+b=int(input("Podaj liczbę b: "))
+
+if(a==b):
+    print("Liczby są równe")
+elif(a>b):
+    print("Liczba a jest większa")
+else:
+    print("Liczba b jest większa")
+
+
+if a>b:
+    print("liczba pierwsza jest większa")
+elif a<b:
+    print("liczba druga jest większa")
+else:
+    print ("obie liczby są równe")
+
+
+if(a==b):
+    print("liczby takie same ")
+elif(a>b):
+    print("a jest wieksze od b")
+elif(a<b):
+    print("B jest wieksze do a" )
+else:
+    print("liczby są różne ")
+
+#Pętla for
+
+for zmienna in range(100,0,-1):     #dla zmiennej w zakresie(od, do, skok)
+    print(zmienna)
+
+#pętla dla wybranego tekstu
+tekst="Ala ma kota"
+print(tekst)
+for litera in tekst:    #w każdej linijce pokazuje nam osobny znak
+    print(litera)
+
+#Wypisz sumę wszystkich liczb z zakresu podanego przez użytkownika
+
+od=int(input("Podaj odkąd chcesz liczyć sumę: "))
+do=int(input("Podaj dokąd chcesz liczyć sumę: "))
+suma = 0
+for i in range (od, do+1):
+    suma = suma+i
+
+print("Suma to: ",suma)
+
+#Wypisz iloczyn wszystkich liczb z zakresu podanego przez użytkownika
+od = int(input("podaj odkąd chcesz liczyć iloczyn: "))
+do = int(input("podj dokąd chcesz liczyć iloczyn: "))
+iloczyn = 1
+for i in range(od, do + 1):
+    iloczyn = iloczyn * i
+    print("iloczyn to: ", iloczyn)
+
+# Wyświetl liczby całkowite z przedziału <50,100> w porządku malejącym co 5
+
+    for i in range(100, 50 - 1, -5):
+        print(i)
+
+#Stwórz tabliczkę mnożenia od 1 do 10
+for i in range (1,10+1):
+    for j in range (1,10+1):
+        print(i,"*",j,"=",i*j)
+
+# Celem gry Abra-Kadabra jest liczenie przez kilka osób od 1 do liczby podanej przez użytkownika,
+# bez wymieniania liczby 3 lub jej wielokrotności (3, 6, 9, 12...) ani liczby 5 i jej wielokrotności (5, 10,...).
+# Zamiast liczby 3 lub jej wielokrotności należy powiedzieć Abra, a zamiast liczby 5 i jej wielokrotności należy
+# powiedzieć Kadabra. W przypadku wspólnej wielokrotności 3 i 5 (np. 15) należy powiedzieć AbraKadabra.
+# Odpada każdy kto popełni błąd.
+# Napisz program, który wczyta liczbę naturalną n i wypisze na ekranie kolejne liczby zgodnie z zasadą gry.
+# Przykład
+# We:
+# 17
+# Wy:
+# 1
+# 2
+# Abra
+# 4
+# Kadabra
+# Abra
+# 7
+#ROZWIĄZANIE 1:
+do = int(input("podaj max liczbe: "))
+for i in range (1,do+1):
+    if (i % 15 == 0):
+        print("AbraKadabra")
+    elif (i%3 == 0):
+        print("Abra")
+    elif(i%5 == 0):
+        print("Kadabra")
+    else:
+        print(i)
+#ROZWIĄZANIE 2:
+do = int(input("podaj max liczbe: "))
+for i in range (1,do+1):
+    if (i%3 == 0 & i%5==0):
+        print("AbraKadabra")
+    elif (i%3 == 0):
+        print("Abra")
+    elif(i%5 == 0):
+        print("Kadabra")
+    else:
+        print(i)
+#Sprawdź czy liczba jest podzielna przez 3 lub 5 a następnie wypisz "podzielna"
+
+a = int(input("Podaj liczbe: "))
+if (a%3==0 | a%5==0):               #and | -> jedno i drugie, or & -> jedno lub drugie
+    print("podzielna")
+else:
+    print("niepodzielna")
+
+    # Wypisz na ekran liczby z przedziału <0,10>, które nie zawierają w sobie cyfr 3 oraz 6.
+    value = 0
+    while value < 11:
+        if value != 3 and value != 6:
+            print(value)
+        value += 1  # value = value + 1  NIE MA value++
+
+#Napisz program, który pobiera od użytkownika ile liczb wczytać a następnie oblicza średnią arytmetyczną
+
+a=int(input("Ile liczb wczytać?: "))
+suma=0
+for i in range(1,a+1):
+    suma += i/a
+
+print(suma)
+#J.W. tylko z klawiatury podajemy liczby
+ilosc = 0
+suma = 0
+a = 0
+while a != -1:
+    a = int(input("podaj liczbę, -1 by zakończyć program i wypisać średnią"))
+    suma += a
+    ilosc += 1
+print("średnia to: ", suma/ilosc)

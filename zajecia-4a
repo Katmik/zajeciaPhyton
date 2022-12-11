@@ -1,0 +1,159 @@
+#Zadanie 1
+import math
+print("program do liczenia ax^2 + bx + c")
+a = float(input("podaj a "))
+b = float(input("podaj b "))
+c = float(input("podaj c "))
+delta = b**2 - 4*a*c
+if delta < 0.0:
+    print("nie ma miejsc zerowych")
+elif delta == 0:
+    print("miejsce zerowe to ", -b/2*a)
+elif delta > 0.0:
+    p_delty = math.sqrt(delta)
+    print("miejsca zerowe to ", (-b - p_delty) / 2 * a, " i ", (-b + p_delty) / 2 * a)
+else:
+    print("co")
+
+#Zad 2
+
+tab = []
+for i in range (0,200):
+    tab.append(i+1)
+    print("lista[",i,"]: ", tab[i])
+
+print("długość listy to ",len(tab))
+minimalna = min(tab)
+print("minimalny element listy to ",tab.index(minimalna))
+print("maksymalny element listy to ",tab.index(max(tab)))
+
+#Zad 3
+a=(input("podaj liczbę"))
+b=(input("podj drugą liczbę"))
+if (a==b):
+     print("liczby są równe")
+else:
+     print("Liczby są różne")
+
+#T: Pseudo Losowanie liczb
+#1. Poproś użytkownika, żeby podał liczbę, a następnie sprawdź czy liczba jest liczbą wylosowaną przez komputer
+#2. Użytkownik ma zgadywać liczbę dopóki nie zgadnie
+#3. Pokazuje czy użytkownik podał liczbę mniejszą od wylosowanej lub większą o wylosowanej
+#4. Pokazuje ile kroków użytkownik potrzebuje, aby zgadnąć liczbę
+import random
+a=0                                     #jeżeli chcemy, żeby uruuchomić pętle, żeby użytkownik mógł coś podać to
+                                        #przypisujemy jej 0
+lp=1                                    #licznik prób nie może zaczynać się od zera!
+losowanie = random.randint(1,100+1)
+
+while a!=losowanie:
+    a = int(input("Podaj swoja szczęsliwą liczbę od 1 do 100: "))
+    if a==losowanie:
+        print("Wygrałeś")
+    else:
+        print("Przegrałeś, spróbuj ponownie")
+        if a>losowanie:
+            print("Wylosowana liczba jest mniejsza")
+        else:
+            print("Wylosowana liczba jest wieksza")
+        lp = lp + 1                                         #po każdej próbie licznik prób się zwiększa
+print("Podjąłeś ",lp," prób")
+#Duży lotek
+#1. Wylosuj 6 liczb z zakresu od 1 do 49 -> 1.2.3.4.5.6
+#2. Zrób żeby listy się nie powtarzały
+#3. Użytkownik ma podać 6 liczb w zakresie 1-49
+#4. Wyświetlamy czy użytkownik trafił daną liczbę i oblicza ilość trafień
+
+import random
+
+lotto = []
+przewidywania =[]
+traf=0
+for i in range(1,6+1):
+    losowana = random.randint(1,50)
+    while losowana in lotto:            #dopóki liczba będzie powtórzona to nie dodawaj do listy tylko losuj jeszcze raz
+        losowana = random.randint(1, 50)
+    else:
+        lotto.append(losowana)
+print(lotto)
+for i in range(1,6+1):
+    liczba = int(input("Podaj liczbę z zakresu 1-49: "))
+    while (liczba > 49 or liczba < 0):
+        liczba = int(input("Podaj liczbę z zakresu 1-49: "))
+    else:
+        przewidywania.append(liczba)
+for i in range(0,6):
+    if przewidywania[i] in lotto:
+        print("Trafiłeś")
+        traf+=1
+    else:
+        print("nie trafiłeś!")
+print(lotto)
+print(przewidywania)
+print("Trafiłeś:",traf,"razy")
+
+#Duży lotek
+#1. Wylosuj 6 liczb z zakresu od 1 do 49 -> 1.2.3.4.5.6
+#2. Zrób żeby listy się nie powtarzały
+#3. Użytkownik ma podać 6 liczb w zakresie 1-49
+#4. Wyświetlamy czy użytkownik trafił daną liczbę i oblicza ilość trafień
+#5. Nie piszemy "trafiłeś" lub "nie trafiłeś"
+import random
+
+lotto = []
+przewidywania =[]
+traf=0
+for i in range(1,6+1):
+    losowana = random.randint(1,50)
+    while losowana in lotto:            #dopóki liczba będzie powtórzona to nie dodawaj do listy tylko losuj jeszcze raz
+        losowana = random.randint(1, 50)
+    else:
+        lotto.append(losowana)
+print(lotto)
+for i in range(1,6+1):
+    liczba = int(input("Podaj liczbę z zakresu 1-49: "))
+    while (liczba > 49 or liczba < 0):
+        liczba = int(input("Podaj liczbę z zakresu 1-49: "))
+    else:
+        przewidywania.append(liczba)
+for i in range(0,6):
+    if przewidywania[i] in lotto:
+        traf+=1
+
+print(lotto)
+print(przewidywania)
+print("Trafiłeś:",traf,"razy")
+
+#Losowanie z danej listy
+
+import random
+
+osoba=["Anna","Bartłomiej", "Daniel", "Dawid", "Karol"]     #Definiujemy listę z której będziemy losować
+
+losowanie = random.choice(osoba) #za zmienną losowanie przypisujemy losowanie z danej listy (metoda choice)
+
+print(losowanie) 
+
+#Stwórzmy dwie listy 1 do 100 a następnie pomnóżmy elementy przez siebie
+
+lista1 = []
+lista2 = []
+
+for i in range(0, 100):     #Pętla, która uzupełnia nam liczby w indeksach 0 do 100
+    lista1.append(i+1)      #Append dodaje nam element na koniec listy
+    lista2.append(i+1)
+for i in range(0,100):                          #Druga pętla nam będzie wypisywała elementy w liscie 1
+    for j in range(0,100):                      #Trzecia pętla nam będzie wypisuwała elementy w liscie 2
+        print(lista1[i],"x",lista2[j],"=",lista1[i]*lista2[j]) #wypisujemy kolejne elementy z list
+
+
+print(lista1)
+print(lista2)
+
+#Wypełnianie list szybkim generatorem list
+
+lista1 = [0]*50 #50 razy element 0
+lista2 = [i+1 for i in range(100)] #szybkie wypełnienie od 1 do 100 //ZAMIAST PĘTLI
+print(lista2)
+
+

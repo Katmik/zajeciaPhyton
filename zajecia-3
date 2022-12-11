@@ -1,0 +1,59 @@
+//Zadanie domowe
+//1.
+odpowiedz = 1
+while odpowiedz != 0:
+    odpowiedz = input("Podaj miesiąc")
+    if (odpowiedz == "Grudzień" or odpowiedz == "grudzien" or odpowiedz=="grudzień"):
+        print("Zima")
+    elif odpowiedz == "Styczeń":
+        print("Zima")
+    elif odpowiedz == "Luty":
+        print("Zima")
+    elif odpowiedz == "Marzec" :
+        print("Wiosna")
+    elif odpowiedz == "Kwiecień":
+        print("Wiosna")
+    elif odpowiedz == "Maj":
+        print("Wiosna")
+    elif odpowiedz == "Czerwiec":
+        print("Lato")
+    elif odpowiedz == "Lipiec":
+        print("Lato")
+    elif odpowiedz == "Sierpień":
+        print("Lato")
+    elif odpowiedz == "Wrzesień":
+        print("Jesień")
+    elif odpowiedz == "Październik":
+        print("Jesień")
+    elif odpowiedz == "Listopad":
+        print("Jesień")
+    else:
+        break
+//2.
+//Rozwiązanie nr 1
+suma=0
+for i in range (1,4):
+    liczba = int(input("Podaj liczbe:"))
+    suma +=liczba
+print(suma/3)
+//Rozwiązanie nr 2
+suma=0
+ilosc = int(input("Podaj ile liczb chcesz mieć: "))
+for i in range (1,ilosc+1):
+    liczba = int(input("Podaj liczbe:"))
+    suma +=liczba
+
+print(suma/ilosc)
+#Zadanie 3
+print("Podaj liczbę całkowitą lub zero aby zakończyc program")
+liczba=1
+lp=0
+ln=0
+while liczba != 0:
+    liczba=int(input("Podaj liczbe całkowitą: "))
+    if liczba%2==0 and liczba!=0:
+        lp+=1
+    elif liczba%2!=0:
+        ln+=1
+print("Wpisałeś", lp, "liczb parzystych")
+print("Wpisałeś", ln, "liczb nieparzystych")
