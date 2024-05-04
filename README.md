@@ -1,2 +1,2 @@
-# zajeciaPhyton
-Phyton
+# ProjektTestowy
+Testowanie aplikacji 
